@@ -1,3 +1,8 @@
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Plugin 'othree/vim-autocomplpop'
+Plugin 'chaimleib/vim-renpy'
+
 set ruler
 set showmode
 set background=dark
@@ -13,6 +18,8 @@ set backspace=2
 
 set autoindent
 set smartindent
+
+set fileencodings=utf8,big5
 
 nmap <bslash>p :set paste!<CR>
 nmap <bslash>x mzHmx:silent! :%s/[ \t][ \t]*$//g<CR>`xzt`z

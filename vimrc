@@ -1,7 +1,6 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'othree/vim-autocomplpop'
-Plugin 'chaimleib/vim-renpy'
 
 set ruler
 set showmode

@@ -52,5 +52,6 @@ Use the following English headings for spec documents:
 - `## Components and Interfaces`
 - `## Data Models`
 - `## Correctness Properties`
+- `### Property N: Title in English` — individual properties inside Correctness Properties
 - `## Error Handling`
 - `## Testing Strategy`

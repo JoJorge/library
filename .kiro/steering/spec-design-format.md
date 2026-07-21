@@ -31,25 +31,44 @@ Example structure:
 
 ## Heading Hierarchy for Correctness Properties
 
-Inside the `## 正確性屬性` section, each individual property MUST use `####` (h4) headings, not `###` (h3).
+Inside the `## Correctness Properties` section, each individual property MUST use `###` (h3) headings with the English format `Property N: <English title>`. The title may include a Chinese subtitle after an em dash.
+
+The validation line immediately following the property description MUST use bold English format: `**Validates: Requirements X.X, Y.Y**`.
 
 Correct:
 ```markdown
-## 正確性屬性
+## Correctness Properties
 
-#### 屬性 1：...
+### Property 1: Title in English
 
-#### 屬性 2：...
+*中文描述。*
+
+**Validates: Requirements 1.2, 2.3**
+
+---
+
+### Property 2: Title in English — 中文副標
+
+*中文描述。*
+
+**Validates: Requirements 1.4, 4.3**
 ```
 
 Incorrect:
 ```markdown
-## 正確性屬性
+## Correctness Properties
 
-### 屬性 1：...
+#### 屬性 1：中文標題
+
+**驗證：需求 1.2、2.3**
 ```
 
-This ensures properties are visually subordinate to the section heading and the TOC hierarchy is consistent.
+TOC entries for properties use indented links under `## Correctness Properties`:
+```markdown
+- [Correctness Properties](#correctness-properties)
+  - [Property 1: Title](#property-1-title)
+  - [Property 2: Title](#property-2-title)
+```
 
 ## UML Diagrams
 

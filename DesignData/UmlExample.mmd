@@ -1,0 +1,150 @@
+classDiagram
+    %% =========================================================
+    %% Namespace
+    %% =========================================================
+    namespace NameSpace1 {
+        class ConcreteClassA
+        class IInterface
+        class IGenericInterface~T~
+        class AbstractBase
+        class ConcreteClassB
+        class ConcreteClassC
+        class GenericClass~T~
+    }
+    namespace NameSpace2 {
+        class EnumName
+    }
+    namespace Namespace3 {
+        class NewClass1
+        class ModifiedClass1
+        class RemovedClass1
+    }
+    
+    %% =========================================================
+    %% Enum 定義
+    %% =========================================================
+    class EnumName {
+        <<enum>>
+        ValueA
+        ValueB
+        ValueC
+    }
+
+    %% =========================================================
+    %% Interface 定義
+    %% =========================================================
+    class IInterface {
+        <<interface>>
+        + MethodA() ReturnType*
+        + MethodB(ParamType param) void*
+    }
+
+    class IGenericInterface~T~ {
+        <<interface>>
+        + void AddItem(T item)*
+    }
+
+    %% =========================================================
+    %% Class 定義
+    %% =========================================================
+    class AbstractBase {
+        <<abstract>>
+        # id: int
+        # name: name
+ 
+        + GetId() int
+        + GetName() string
+        + AbstractMethod() void*
+    }
+
+    class ConcreteClassA {
+        - privateField: int
+        # protectedField: int
+        + publicField: string
+        ~ internalField: string
+        + StaticPublicField: string$
+
+        + ConcreteClassA(int id)
+        + MethodA() ReturnType
+        + MethodB(ParamType param) void
+        - PrivateHelper() void
+    }
+
+    class ConcreteClassB {
+        - fieldX: string
+        - fieldY: string
+
+        + ConcreteClassB(string x, string y)
+        + MethodC() void
+    }
+
+    class ConcreteClassC {
+        -int value
+
+        +ConcreteClassC(int value)
+        +AbstractMethod() void
+    }
+
+    class GenericClass~T~ {
+        - items: T[]
+        - count: int
+
+        + Add(T item) void
+        + Get(int index) T
+        + Remove(T item) void
+        + Count() int
+    }
+
+    class NewClass1 {
+        - newField: int
+        + NewMethod() void
+    }
+    class ModifiedClass1 {
+        <<修改>>
+        - existingField: int
+        - addedField: string ❇️
+        + ChangedMethod(NewParam p) ReturnType🔄
+        + RemovedMethod() void❌
+    }
+    class RemovedClass1 {
+        - obsoleteField: string
+        + ObsoleteMethod() void
+    }
+
+    %% =========================================================
+    %% Relations
+    %% =========================================================
+    AbstractBase <|-- ConcreteClassA
+    AbstractBase <|-- ConcreteClassC
+
+    IInterface <|.. ConcreteClassA
+    IInterface <|.. ConcreteClassB
+    IGenericInterface~ConcreteClassA~ <|.. GenericClass~T~
+
+    ConcreteClassA *-- ConcreteClassB
+
+    ConcreteClassA o-- ConcreteClassC
+
+    ConcreteClassB --> EnumName : has status
+
+    ConcreteClassA -- ConcreteClassC
+
+    ConcreteClassA ..> GenericClass~T~ : uses
+
+    ConcreteClassA "1" --> "0..*" ConcreteClassB
+    ConcreteClassA "1" *-- "1..*" ConcreteClassC
+
+    %% =========================================================
+    %% 修改標記風格
+    %% =========================================================
+    class NewClass1:::NewClass
+    class ModifiedClass1:::ModifiedClass
+    class RemovedClass1:::RemovedClass
+
+    %% =========================================================
+    %% 標記風格
+    %% =========================================================   
+    classDef NewClass fill:#407E40,stroke:#006400,stroke-width:2px
+    classDef ModifiedClass fill:#008B8B,stroke:#004B4B,stroke-width:2px
+    classDef RemovedClass fill:#AF6676,stroke:#DC143C,stroke-width:2px,stroke-dasharray: 5 5
+

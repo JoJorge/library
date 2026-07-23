@@ -124,6 +124,8 @@ When a diagram is extracted to `DesignData/`, reference it from `design.md` with
 ```markdown
 ![UML Diagram](DesignData/FeatureName.mmd)
 ```
+UML or its link should be presented in Architecture/整體結構 section
+
 
 ### Diagram Structure
 

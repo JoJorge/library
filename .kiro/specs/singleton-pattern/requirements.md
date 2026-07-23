@@ -83,3 +83,17 @@ Singleton Pattern（單例模式）是一種設計模式，確保某個類別在
 2. WHEN 多個執行緒同時修改單例狀態時，THE 單例 SHALL 防止資料損壞
 3. THE 單例 SHALL 說明哪些操作是執行緒安全的，哪些需要外部同步
 4. WHEN 狀態變更發生時，THE 單例 SHALL 確保所有執行緒均能看見最新狀態
+
+### Requirement 7: 可繼承的抽象單例基底類別
+
+**User Story:** 作為開發者，我想要繼承一個抽象的泛型單例基底類別，以便快速建立具有完整單例功能的特定用途 manager（例如 AudioManager、GameManager、NetworkManager）。
+
+#### Acceptance Criteria
+
+1. THE 抽象單例基底類別 SHALL 宣告為帶有泛型型別參數 T 的 abstract class，其中 T 受限為該基底類別本身的子類別
+2. THE 抽象單例基底類別 SHALL 提供公開的靜態 Instance 屬性，回傳型別為 T
+3. WHEN 子類別繼承抽象單例基底類別時，THE 子類別 SHALL 無需重複實作單例邏輯即可取得完整的單例功能
+4. WHEN 多個不同的子類別各自繼承抽象單例基底類別時，THE 抽象單例基底類別 SHALL 為每個子類別維護各自獨立的實例，而非共用同一個實例
+5. WHEN 子類別的 Instance 被第一次存取時，THE 抽象單例基底類別 SHALL 以延遲初始化方式建立該子類別的實例
+6. WHEN 多個執行緒同時第一次存取同一子類別的 Instance 時，THE 抽象單例基底類別 SHALL 僅建立一個實例
+7. THE 抽象單例基底類別 SHALL 將建構子宣告為 protected，使子類別可以定義建構子，但外部程式碼無法直接實例化

@@ -29,6 +29,32 @@ Example structure:
 ...
 ```
 
+## Back-to-Top Links
+
+Every `##` section (except `## 目錄` itself) MUST end with a back-to-top link immediately before the `---` horizontal rule that separates it from the next section. The link format is:
+
+```markdown
+[↩](#目錄)
+---
+```
+
+The `[↩](#目錄)` line comes first, then `---` on the very next line, with no blank line between them. Place a blank line before `[↩](#目錄)`.
+
+Example:
+```markdown
+## 概覽
+
+*內容說明。*
+
+[↩](#目錄)
+---
+
+## Architecture
+...
+```
+
+The last `##` section in the document also ends with `[↩](#目錄)` followed by `---`.
+
 ## Heading Hierarchy for Correctness Properties
 
 Inside the `## Correctness Properties` section, each individual property MUST use `###` (h3) headings with the English format `Property N: <English title>`. The title may include a Chinese subtitle after an em dash.

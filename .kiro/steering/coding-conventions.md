@@ -5,7 +5,7 @@ inclusion: always
 # Coding Conventions
 
 ## Environment
-
+- 除非特別指定，否則預設環境如下
 - 語言：C#
 - 平台：Unity（使用 Unity 相容的 C# 版本，避免使用 Unity 不支援的 .NET API）
 - 每個 MonoBehaviour、ScriptableObject 等 Unity 類別遵循 Unity 生命週期慣例

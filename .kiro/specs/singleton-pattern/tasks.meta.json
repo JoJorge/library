@@ -1,0 +1,110 @@
+{
+  "pbtResults": {
+    "6.1 Property 1: Identity Preservation — 多次存取回傳相同實例": {
+      "status": "passed",
+      "lastRunTimestamp": 1785381399084
+    }
+  },
+  "executionHistory": {
+    "1.1 建立目錄結構與核心 Singleton\\<T\\> 抽象基底類別": [
+      {
+        "executionId": "bba070db-8165-4354-8b7d-6d1fa309655e",
+        "chatSessionId": "sess_ae16fdd6-eff4-4379-891c-f1ba3fcb96d1",
+        "timestamp": 1785378113980
+      },
+      {
+        "executionId": "bba070db-8165-4354-8b7d-6d1fa309655e",
+        "chatSessionId": "sess_ae16fdd6-eff4-4379-891c-f1ba3fcb96d1",
+        "timestamp": 1785378259459
+      }
+    ],
+    "1. 建立專案結構與核心介面": [
+      {
+        "executionId": "bba070db-8165-4354-8b7d-6d1fa309655e",
+        "chatSessionId": "sess_ae16fdd6-eff4-4379-891c-f1ba3fcb96d1",
+        "timestamp": 1785378259690
+      }
+    ],
+    "4.1 建立測試專案結構與輔助工具": [
+      {
+        "executionId": "642ad788-cad4-4724-8ebe-9024083634fd",
+        "chatSessionId": "sess_89f92888-46da-46aa-afc4-277ab2008bf4",
+        "timestamp": 1785379867004
+      },
+      {
+        "executionId": "642ad788-cad4-4724-8ebe-9024083634fd",
+        "chatSessionId": "sess_89f92888-46da-46aa-afc4-277ab2008bf4",
+        "timestamp": 1785380038324
+      }
+    ],
+    "4. 實作測試基礎設施": [
+      {
+        "executionId": "642ad788-cad4-4724-8ebe-9024083634fd",
+        "chatSessionId": "sess_89f92888-46da-46aa-afc4-277ab2008bf4",
+        "timestamp": 1785380038534
+      }
+    ],
+    "5.1 實作基本單例行為的單元測試": [
+      {
+        "executionId": "2fc086fd-b2bf-45b3-aaf8-bf9f17774a5d",
+        "chatSessionId": "sess_2a59fbd3-8e6e-471d-8f93-59bdc1a6d46a",
+        "timestamp": 1785380752909
+      },
+      {
+        "executionId": "2fc086fd-b2bf-45b3-aaf8-bf9f17774a5d",
+        "chatSessionId": "sess_2a59fbd3-8e6e-471d-8f93-59bdc1a6d46a",
+        "timestamp": 1785380987804
+      }
+    ],
+    "5.2 實作反射防護與錯誤處理的單元測試": [
+      {
+        "executionId": "2fc086fd-b2bf-45b3-aaf8-bf9f17774a5d",
+        "chatSessionId": "sess_2a59fbd3-8e6e-471d-8f93-59bdc1a6d46a",
+        "timestamp": 1785380753680
+      },
+      {
+        "executionId": "2fc086fd-b2bf-45b3-aaf8-bf9f17774a5d",
+        "chatSessionId": "sess_2a59fbd3-8e6e-471d-8f93-59bdc1a6d46a",
+        "timestamp": 1785380988678
+      }
+    ],
+    "5. 實作範例導向測試（Unit Tests）": [
+      {
+        "executionId": "2fc086fd-b2bf-45b3-aaf8-bf9f17774a5d",
+        "chatSessionId": "sess_2a59fbd3-8e6e-471d-8f93-59bdc1a6d46a",
+        "timestamp": 1785380988856
+      }
+    ],
+    "6.1 Property 1: Identity Preservation — 多次存取回傳相同實例": [
+      {
+        "executionId": "fa217d9b-21a2-4dbc-8509-b9c2cdedf155",
+        "chatSessionId": "sess_e10ef85a-f9d2-4990-95bc-f9119a69e8da",
+        "timestamp": 1785381193599
+      },
+      {
+        "executionId": "fa217d9b-21a2-4dbc-8509-b9c2cdedf155",
+        "chatSessionId": "sess_e10ef85a-f9d2-4990-95bc-f9119a69e8da",
+        "timestamp": 1785381417820
+      }
+    ],
+    "6. 實作屬性導向測試（Property-Based Tests）": [
+      {
+        "executionId": "fa217d9b-21a2-4dbc-8509-b9c2cdedf155",
+        "chatSessionId": "sess_e10ef85a-f9d2-4990-95bc-f9119a69e8da",
+        "timestamp": 1785381418001
+      }
+    ],
+    "7. Final checkpoint - 確認所有測試通過": [
+      {
+        "executionId": "82942c48-29a3-4f70-936a-db9f8607f6a9",
+        "chatSessionId": "sess_07834610-eb82-4896-8495-d0113ce93c74",
+        "timestamp": 1785381764486
+      },
+      {
+        "executionId": "82942c48-29a3-4f70-936a-db9f8607f6a9",
+        "chatSessionId": "sess_07834610-eb82-4896-8495-d0113ce93c74",
+        "timestamp": 1785381843256
+      }
+    ]
+  }
+}

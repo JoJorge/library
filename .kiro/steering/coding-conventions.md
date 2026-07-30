@@ -9,6 +9,8 @@ inclusion: always
 - 語言：C#
 - 平台：Unity（使用 Unity 相容的 C# 版本，避免使用 Unity 不支援的 .NET API）
 - 每個 MonoBehaviour、ScriptableObject 等 Unity 類別遵循 Unity 生命週期慣例
+- 程式根目錄：如果workspace下存在Assets資料夾，則程式根目錄為Asstes/Scripts，否則程式根目錄為Scripts/
+- 將所有生成的程式放在程式根目錄下，預設依照規格名稱拆分子資料夾，如有特別指定子資料夾，則以指定規則為主
 
 ## Coding Style
 

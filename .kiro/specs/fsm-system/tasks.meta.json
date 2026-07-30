@@ -1,0 +1,244 @@
+{
+  "pbtResults": {
+    "2.7 Write property test for exception propagation": {
+      "status": "passed",
+      "lastRunTimestamp": 1785396561354
+    },
+    "2.5 Write property tests for Machine state lifecycle": {
+      "status": "passed",
+      "lastRunTimestamp": 1785396562550
+    }
+  },
+  "executionHistory": {
+    "1.1 Create MachineStatus enum and IState interface": [
+      {
+        "executionId": "e8192775-3c78-4ec3-a47c-c431ec1abaef",
+        "chatSessionId": "sess_a819ed29-38c4-4321-835b-0f335f1b164f",
+        "timestamp": 1785395189682
+      },
+      {
+        "executionId": "e8192775-3c78-4ec3-a47c-c431ec1abaef",
+        "chatSessionId": "sess_a819ed29-38c4-4321-835b-0f335f1b164f",
+        "timestamp": 1785395276819
+      }
+    ],
+    "1. Set up project structure and core types": [
+      {
+        "executionId": "e8192775-3c78-4ec3-a47c-c431ec1abaef",
+        "chatSessionId": "sess_a819ed29-38c4-4321-835b-0f335f1b164f",
+        "timestamp": 1785395277039
+      }
+    ],
+    "2.1 Create Machine abstract class with internal state fields": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395693758
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395834756
+      }
+    ],
+    "2.2 Implement Machine lifecycle methods (StartMachine, StopMachine)": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395843580
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395911431
+      }
+    ],
+    "2.3 Implement TransitionTo method with guards": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395844376
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395912118
+      }
+    ],
+    "2.4 Implement Machine Update and FixedUpdate methods": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395844988
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395912936
+      }
+    ],
+    "2.5 Write property tests for Machine state lifecycle": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395918903
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785396788617
+      }
+    ],
+    "2.6 Write property tests for Machine transitions": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395919552
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785396789215
+      }
+    ],
+    "2.7 Write property test for exception propagation": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395920358
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785396790084
+      }
+    ],
+    "2.8 Write unit tests for Machine edge cases": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785395920991
+      },
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785396790867
+      }
+    ],
+    "2. Implement Machine class": [
+      {
+        "executionId": "198aa32c-1127-4181-b9ef-199a248fc55e",
+        "chatSessionId": "sess_f559b0b6-d265-4839-b93a-e43221f9556c",
+        "timestamp": 1785396791114
+      }
+    ],
+    "3. Checkpoint - Machine implementation verification": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397463560
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397484415
+      }
+    ],
+    "4.1 Create FsmManager with machine registration and removal": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397463829
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397667273
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785398007635
+      }
+    ],
+    "4.2 Implement FsmManager Update and FixedUpdate with deferred mutation": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397464077
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785398019134
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785398023329
+      }
+    ],
+    "4.5 Write unit tests for FsmManager edge cases": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397464311
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785398028164
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785398132821
+      }
+    ],
+    "5. Checkpoint - FsmManager implementation verification": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397464558
+      }
+    ],
+    "6.1 Create test helpers and mock states for integration testing": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397464872
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397498018
+      },
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397662237
+      }
+    ],
+    "7. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397465151
+      }
+    ],
+    "6. Integration and wiring": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785397662547
+      }
+    ],
+    "4. Implement FsmManager class": [
+      {
+        "executionId": "f329e4e7-4a69-4d55-936b-e63ffb432026",
+        "chatSessionId": "sess_491b0ced-bf19-4c27-ae8f-24e7cec41cc8",
+        "timestamp": 1785398133099
+      }
+    ]
+  }
+}

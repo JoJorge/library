@@ -106,7 +106,7 @@
     - 測試同時存在多個 Machine 無上限（Requirements 3.1）
     - _Requirements: 3.1, 3.2, 6.3_
 
-- [~] 5. Checkpoint - FsmManager implementation verification
+- [ ] 5. Checkpoint - FsmManager implementation verification
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 6. Integration and wiring
@@ -122,7 +122,7 @@
     - 測試在 Update 迴圈中註冊/移除 Machine 的延遲生效
     - _Requirements: 1.1–1.8, 2.1–2.7, 3.1–3.6, 4.1–4.7_
 
-- [~] 7. Final checkpoint - Ensure all tests pass
+- [ ] 7. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

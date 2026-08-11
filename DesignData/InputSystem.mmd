@@ -1,0 +1,202 @@
+classDiagram
+    %% =========================================================
+    %% Namespace
+    %% =========================================================
+    namespace SingletonPattern {
+        class Singleton~T~
+    }
+    namespace InputSystem {
+        class InputDeviceType
+        class InputContext
+        class SystemState
+        class InputActionEnumAttribute
+        class ActionEnumResolver
+        class GameplayAction
+        class MainMenuAction
+        class BindingConflict
+        class BindingProfile
+        class IContextHandler
+        class InputSystemManager
+        class DeviceDetector
+        class BindingManager
+        class ConflictChecker
+        class IBindingStorage
+    }
+
+    %% =========================================================
+    %% Enum 定義
+    %% =========================================================
+    class InputDeviceType {
+        <<enum>>
+        KeyboardMouse
+        Gamepad
+    }
+
+    class InputContext {
+        <<enum>>
+        MainMenu
+        Gameplay
+        PauseMenu
+    }
+
+    class SystemState {
+        <<enum>>
+        Uninitialized
+        Initializing
+        Ready
+        Disabled
+    }
+
+    class GameplayAction {
+        <<enum>>
+        Move
+        Jump
+        Attack
+        Interact
+    }
+
+    class MainMenuAction {
+        <<enum>>
+        Navigate
+        Confirm
+        Cancel
+    }
+
+    %% =========================================================
+    %% Interface 定義
+    %% =========================================================
+    class IContextHandler {
+        <<interface>>
+        + Context: InputContext*
+        + IsActive: bool*
+        + Activate() void*
+        + Deactivate() void*
+    }
+
+    class IBindingStorage {
+        <<interface>>
+        + Save(InputDeviceType deviceType, string json) bool*
+        + Load(InputDeviceType deviceType) string*
+        + Exists(InputDeviceType deviceType) bool*
+    }
+
+    %% =========================================================
+    %% Class 定義
+    %% =========================================================
+    class Singleton~T~ {
+        <<abstract>>
+        - _instance: volatile T$
+        - _lock: readonly object$
+        # Singleton()
+        + Instance: T$
+    }
+
+    class InputActionEnumAttribute {
+        + Context: InputContext<+;->
+    }
+
+    class ActionEnumResolver {
+        <<static>>
+        + Validate(Enum action) bool$
+        + Resolve(Enum action) string$
+        + GetContext(Enum action) InputContext$
+    }
+
+    class InputSystemManager {
+        - _inputActionAsset: InputActionAsset
+        - _contextHandlers: Dictionary~InputContext, IContextHandler~
+        - _activeContext: InputContext?
+
+        + SystemState: SystemState<+;->
+        + DeviceDetector: DeviceDetector<+;->
+        + BindingManager: BindingManager<+;->
+        + ConflictChecker: ConflictChecker<+;->
+        + Init(InputActionAsset asset) void
+        + RegisterContextHandler(IContextHandler handler) bool
+        + SwitchContext(InputContext context) bool
+        + GetActiveContext() InputContext?
+        + Release() void
+    }
+
+    class DeviceDetector {
+        - _mouseMoveThreshold: float
+        - _gamepadAxisThreshold: float
+        - _onDeviceChanged: Action~InputDeviceType~
+
+        + CurrentDeviceType: InputDeviceType<+;->
+        + RegisterDeviceChangedCallback(Action~InputDeviceType~ callback) void
+        + UnregisterDeviceChangedCallback(Action~InputDeviceType~ callback) void
+        + Init() void
+        + Release() void
+        - OnInputEvent(InputEventPtr eventPtr, InputDevice device) void
+    }
+
+    class BindingManager {
+        - _inputActionAsset: InputActionAsset
+        - _storage: IBindingStorage
+        - _profiles: Dictionary~InputDeviceType, BindingProfile~
+
+        + ApplyBinding(Enum action, string bindingPath, InputDeviceType deviceType) void 
+        + ResetBinding(Enum action, InputDeviceType deviceType) void 
+        + ResetAllBindings(InputDeviceType deviceType) void
+        + SaveBindings(InputDeviceType deviceType) bool
+        + LoadBindings(InputDeviceType deviceType) bool
+        + GetDisplayNames(Enum action, InputDeviceType deviceType) IReadOnlyList~string~ 
+        + GetBindingPaths(Enum action, InputDeviceType deviceType) IReadOnlyList~string~ 
+        + Init(InputActionAsset asset, IBindingStorage storage) void
+    }
+
+    class ConflictChecker {
+        - _inputActionAsset: InputActionAsset
+        - _contextHandlers: Dictionary~InputContext, IContextHandler~
+        + OnConflictDetected: event Action~Enum, IReadOnlyList~Enum~~ 
+
+        + CheckConflict(Enum action, string bindingPath, InputDeviceType deviceType) IReadOnlyList~BindingConflict~ 
+        + ScanAllConflicts(InputDeviceType deviceType) IReadOnlyList~BindingConflict~
+        + Init(InputActionAsset asset, Dictionary~InputContext, IContextHandler~ handlers) void
+    }
+
+    class BindingProfile {
+        + DeviceType: InputDeviceType<+;->
+        + OverridesJson: string<+;+>
+    }
+
+    class BindingConflict {
+        + BindingPath: string<+;->
+        + Action: Enum<+;-> 
+        + ConflictingActions: IReadOnlyList~Enum~<+;-> 
+        + Context: InputContext<+;->
+        + DeviceType: InputDeviceType<+;->
+    }
+
+    %% =========================================================
+    %% Relations
+    %% =========================================================
+    Singleton~T~ <|-- InputSystemManager
+
+    InputSystemManager *-- DeviceDetector
+    InputSystemManager *-- BindingManager
+    InputSystemManager *-- ConflictChecker
+    InputSystemManager *--"1...*" IContextHandler
+
+    BindingManager o--"1" IBindingStorage
+    BindingManager o--"0...*" BindingProfile
+    BindingManager ..> ActionEnumResolver : validates
+    ConflictChecker ..> BindingConflict : produces
+    ConflictChecker ..> ActionEnumResolver : validates
+    ActionEnumResolver ..> InputActionEnumAttribute : reads
+
+    DeviceDetector ..> InputDeviceType : detects
+    BindingManager ..> InputDeviceType : filters by
+    ConflictChecker ..> InputContext : scopes by
+    InputSystemManager ..> SystemState
+
+    GameplayAction ..> InputActionEnumAttribute
+    MainMenuAction ..> InputActionEnumAttribute
+
+    %% =========================================================
+    %% Style definitions
+    %% =========================================================
+    classDef NewClass fill:#407E40,stroke:#006400,stroke-width:2px
+    classDef ModifiedClass fill:#008B8B,stroke:#004B4B,stroke-width:2px
+    classDef RemovedClass fill:#AF6676,stroke:#DC143C,stroke-width:2px,stroke-dasharray: 5 5

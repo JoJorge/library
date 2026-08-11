@@ -100,18 +100,17 @@ TOC entries for properties use indented links under `## Correctness Properties`:
 
 ### File Format and Location
 
-UML diagrams are written in Mermaid syntax. Placement depends on total line count:
+UML diagrams are .mmd files written in Mermaid syntax. Placement depends on total line count:
 
 | Total UML lines | Placement |
 |-----------------|-----------|
-| < 300 | Inline in `design.md` as a fenced `mermaid` code block |
-| 300 – 999 | Single `.mmd` file in `DesignData/`, referenced from `design.md` |
-| ≥ 1000 | Multiple `.mmd` files in `DesignData/` with a numeric suffix |
+| < 999 | Single `.mmd` file in `DesignData/`, referenced from `design.md` |
+| ≥ 1000 | Multiple `.mmd` files in `DesignData/<FeatureName>/` with a numeric suffix |
 
 When splitting into multiple files, use a numeric suffix starting from `_2`:
 
 ```
-DesignData/
+DesignData/FeatureName/
   FeatureName.mmd        ← part 1 (≤ 1000 lines)
   FeatureName_2.mmd      ← part 2
   FeatureName_3.mmd      ← part 3
@@ -122,7 +121,7 @@ Each split file must be a self-contained, valid Mermaid diagram (i.e., starts wi
 When a diagram is extracted to `DesignData/`, reference it from `design.md` with a relative path link:
 
 ```markdown
-![UML Diagram](DesignData/FeatureName.mmd)
+![UML Diagram](/DesignData/FeatureName.mmd)
 ```
 UML or its link should be presented in Architecture/整體結構 section
 
@@ -196,7 +195,6 @@ Example:
 
 ```
 class ModifiedClass1 {
-    <<修改>>
     - existingField: int
     - addedField: string ❇️
     + ChangedMethod(NewParam p) ReturnType 🔄
@@ -222,3 +220,8 @@ Multiplicity labels go on both ends when relevant:
 ```
 ClassA "1" --> "0..*" ClassB : label
 ```
+
+### Naming Convention
+If the creating class or APIs match the condition, use the following nameing convention.
+1. For top-level manager(usually with singleton pattern), name the class as XxxManager.
+2. For the initialization and release API of the manager/controller, etc, naming them as Init and Release.

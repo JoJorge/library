@@ -9,6 +9,7 @@ classDiagram
         class AbstractBase
         class ConcreteClassB
         class ConcreteClassC
+        class ConcreteClassD
         class GenericClass~T~
     }
     namespace NameSpace2 {
@@ -78,14 +79,22 @@ classDiagram
         - fieldY: string
 
         + ConcreteClassB(string x, string y)
+        + MethodA() ReturnType
+        + MethodB(ParamType param) void
         + MethodC() void
     }
 
     class ConcreteClassC {
-        -int value
+        -value: int
 
         +ConcreteClassC(int value)
         +AbstractMethod() void
+    }
+
+    class ConcreteClassD {
+        -value: string
+
+        +ConcreteClassD(string value)
     }
 
     class GenericClass~T~ {
@@ -103,7 +112,6 @@ classDiagram
         + NewMethod() void
     }
     class ModifiedClass1 {
-        <<修改>>
         - existingField: int
         - addedField: string ❇️
         + ChangedMethod(NewParam p) ReturnType🔄
@@ -117,25 +125,21 @@ classDiagram
     %% =========================================================
     %% Relations
     %% =========================================================
-    AbstractBase <|-- ConcreteClassA
-    AbstractBase <|-- ConcreteClassC
+    AbstractBase <|-- ConcreteClassC : inheritance
 
-    IInterface <|.. ConcreteClassA
+    IInterface <|.. ConcreteClassA : implementation
     IInterface <|.. ConcreteClassB
     IGenericInterface~ConcreteClassA~ <|.. GenericClass~T~
 
-    ConcreteClassA *-- ConcreteClassB
 
-    ConcreteClassA o-- ConcreteClassC
+    ConcreteClassA o-- ConcreteClassD : aggregation
 
-    ConcreteClassB --> EnumName : has status
-
-    ConcreteClassA -- ConcreteClassC
+    ConcreteClassB ..> EnumName : has status
 
     ConcreteClassA ..> GenericClass~T~ : uses
 
-    ConcreteClassA "1" --> "0..*" ConcreteClassB
-    ConcreteClassA "1" *-- "1..*" ConcreteClassC
+    ConcreteClassA "1" -- "0..*" ConcreteClassB : association
+    ConcreteClassA *-- "1..*" ConcreteClassC : composition
 
     %% =========================================================
     %% 修改標記風格

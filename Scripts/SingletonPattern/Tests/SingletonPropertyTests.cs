@@ -1,7 +1,7 @@
 namespace SingletonPattern.Tests
 {
     using FsCheck;
-    using FsCheck.NUnit;
+    using FsCheck.Fluent;
     using NUnit.Framework;
 
     /// <summary>
@@ -24,15 +24,13 @@ namespace SingletonPattern.Tests
         /// 每次存取 <c>Singleton&lt;T&gt;.Instance</c> 所回傳的實例參考均應相同（<c>ReferenceEquals</c> 成立）。
         /// </summary>
         /// <param name="accessCount">由 FsCheck 生成的隨機存取次數（範圍 2～1000）。</param>
-        /// <returns>若所有存取回傳同一實例則為 <c>true</c>。</returns>
         /// <remarks>
         /// <para><strong>Validates: Requirements 1.2, 2.3</strong></para>
         /// </remarks>
-        [Property]
-        [Category("Feature: singleton-pattern, Property 1: Identity Preservation")]
-        public Property Instance_MultipleAccesses_AlwaysReturnsSameReference()
+        [Test]
+        public void Instance_MultipleAccesses_AlwaysReturnsSameReference()
         {
-            return Prop.ForAll(
+            Prop.ForAll(
                 Gen.Choose(2, 1000).ToArbitrary(),
                 accessCount =>
                 {
@@ -51,7 +49,7 @@ namespace SingletonPattern.Tests
                     }
 
                     return true;
-                });
+                }).QuickCheckThrowOnFailure();
         }
     }
 }

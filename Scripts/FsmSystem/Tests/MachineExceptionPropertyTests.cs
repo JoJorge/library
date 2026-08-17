@@ -2,7 +2,7 @@ namespace FsmSystem.Tests
 {
     using System;
     using FsCheck;
-    using FsCheck.NUnit;
+    using FsCheck.Fluent;
     using NUnit.Framework;
 
     /// <summary>
@@ -20,7 +20,6 @@ namespace FsmSystem.Tests
         /// <para><strong>Validates: Requirements 1.7</strong></para>
         /// </remarks>
         [Test]
-        [Category("Feature: fsm-system, Property 5: Exception Propagation Halts Lifecycle")]
         public void ExceptionInStartPropagatesAndHaltsLifecycle()
         {
             var throwingState = new ThrowingState(LifecycleMethod.Start);
@@ -36,7 +35,6 @@ namespace FsmSystem.Tests
         /// <para><strong>Validates: Requirements 1.7</strong></para>
         /// </remarks>
         [Test]
-        [Category("Feature: fsm-system, Property 5: Exception Propagation Halts Lifecycle")]
         public void ExceptionInUpdatePropagatesAndHaltsLifecycle()
         {
             var throwingState = new ThrowingState(LifecycleMethod.Update);
@@ -53,7 +51,6 @@ namespace FsmSystem.Tests
         /// <para><strong>Validates: Requirements 1.7</strong></para>
         /// </remarks>
         [Test]
-        [Category("Feature: fsm-system, Property 5: Exception Propagation Halts Lifecycle")]
         public void ExceptionInFixedUpdatePropagatesAndHaltsLifecycle()
         {
             var throwingState = new ThrowingState(LifecycleMethod.FixedUpdate);
@@ -70,7 +67,6 @@ namespace FsmSystem.Tests
         /// <para><strong>Validates: Requirements 1.7</strong></para>
         /// </remarks>
         [Test]
-        [Category("Feature: fsm-system, Property 5: Exception Propagation Halts Lifecycle")]
         public void ExceptionInEndDuringTransitionPropagatesAndDoesNotEnterNewState()
         {
             var throwingState = new ThrowingState(LifecycleMethod.End);
@@ -89,11 +85,9 @@ namespace FsmSystem.Tests
         /// <remarks>
         /// <para><strong>Validates: Requirements 1.7</strong></para>
         /// </remarks>
-        [Property]
-        [Category("Feature: fsm-system, Property 5: Exception Propagation Halts Lifecycle")]
-        public Property ExceptionInAnyLifecycleMethodPropagates()
+        public void ExceptionInAnyLifecycleMethodPropagates()
         {
-            return Prop.ForAll(
+            Prop.ForAll(
                 Arb.From(Gen.Elements(LifecycleMethod.Start, LifecycleMethod.Update, LifecycleMethod.FixedUpdate, LifecycleMethod.End)),
                 lifecycleMethod =>
                 {
@@ -130,7 +124,7 @@ namespace FsmSystem.Tests
 
                     return exceptionPropagated.Label(
                         $"Exception in {lifecycleMethod} must propagate to caller");
-                });
+                }).QuickCheckThrowOnFailure();
         }
 
         /// <summary>
@@ -139,11 +133,9 @@ namespace FsmSystem.Tests
         /// <remarks>
         /// <para><strong>Validates: Requirements 1.7</strong></para>
         /// </remarks>
-        [Property]
-        [Category("Feature: fsm-system, Property 5: Exception Propagation Halts Lifecycle")]
-        public Property ExceptionInEndHaltsTransitionAndNewStateNotEntered()
+        public void ExceptionInEndHaltsTransitionAndNewStateNotEntered()
         {
-            return Prop.ForAll(
+            Prop.ForAll(
                 Arb.From(Gen.Choose(1, 50)),
                 attempts =>
                 {
@@ -174,7 +166,7 @@ namespace FsmSystem.Tests
 
                     return allBlocked.Label(
                         "New State Start must never be called when End throws");
-                });
+                }).QuickCheckThrowOnFailure();
         }
     }
 }

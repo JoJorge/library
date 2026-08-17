@@ -2,7 +2,7 @@ namespace FsmSystem.Tests
 {
     using System.Collections.Generic;
     using FsCheck;
-    using FsCheck.NUnit;
+    using FsCheck.Fluent;
     using NUnit.Framework;
 
     /// <summary>
@@ -17,15 +17,12 @@ namespace FsmSystem.Tests
         /// Property 3: Transition Sequence Ordering — 對於任何有效轉換，順序嚴格為：
         /// old State.End() → 更新 CurrentState → new State.Start()，無交錯。
         /// </summary>
-        /// <returns>若所有轉換順序正確則屬性成立。</returns>
         /// <remarks>
         /// <para><strong>Validates: Requirements 1.4, 1.5</strong></para>
         /// </remarks>
-        [Property]
-        [Category("Feature: fsm-system, Property 3: Transition Sequence Ordering")]
-        public Property TransitionSequenceOrdering()
+        public void TransitionSequenceOrdering()
         {
-            return Prop.ForAll(
+            Prop.ForAll(
                 Gen.Choose(1, 20).ToArbitrary(),
                 transitionCount =>
                 {
@@ -61,7 +58,7 @@ namespace FsmSystem.Tests
                     }
 
                     return orderCorrect;
-                });
+                }).QuickCheckThrowOnFailure();
         }
 
         // Feature: fsm-system, Property 4: End Terminates Lifecycle
@@ -70,15 +67,12 @@ namespace FsmSystem.Tests
         /// Property 4: End Terminates Lifecycle — 在 State 的 End 被呼叫後，
         /// 該 State 不再接收 Update 或 FixedUpdate 呼叫。
         /// </summary>
-        /// <returns>若 End 呼叫後無後續生命週期呼叫則屬性成立。</returns>
         /// <remarks>
         /// <para><strong>Validates: Requirements 1.4, 2.2</strong></para>
         /// </remarks>
-        [Property]
-        [Category("Feature: fsm-system, Property 4: End Terminates Lifecycle")]
-        public Property EndTerminatesLifecycle()
+        public void EndTerminatesLifecycle()
         {
-            return Prop.ForAll(
+            Prop.ForAll(
                 Gen.Choose(1, 50).ToArbitrary(),
                 updatesAfterTransition =>
                 {
@@ -98,7 +92,7 @@ namespace FsmSystem.Tests
                     }
 
                     return oldState.EndCalled && !oldState.ReceivedCallAfterEnd;
-                });
+                }).QuickCheckThrowOnFailure();
         }
 
         // Feature: fsm-system, Property 6: Guarded Transition Rejection
@@ -111,7 +105,6 @@ namespace FsmSystem.Tests
         /// <para><strong>Validates: Requirements 2.4</strong></para>
         /// </remarks>
         [Test]
-        [Category("Feature: fsm-system, Property 6: Guarded Transition Rejection")]
         public void TransitionDuringEndIsIgnored()
         {
             var initialState = new PassiveState();
@@ -139,7 +132,6 @@ namespace FsmSystem.Tests
         /// <para><strong>Validates: Requirements 2.7</strong></para>
         /// </remarks>
         [Test]
-        [Category("Feature: fsm-system, Property 6: Guarded Transition Rejection")]
         public void TransitionDuringStartIsIgnored()
         {
             var initialState = new PassiveState();
@@ -161,15 +153,12 @@ namespace FsmSystem.Tests
         /// Property 7: No Automatic Transitions — 若 State 從未呼叫 TransitionTo，
         /// 則無論 Update/FixedUpdate 呼叫多少次，CurrentState 都不會改變。
         /// </summary>
-        /// <returns>若 CurrentState 未改變則屬性成立。</returns>
         /// <remarks>
         /// <para><strong>Validates: Requirements 2.5</strong></para>
         /// </remarks>
-        [Property]
-        [Category("Feature: fsm-system, Property 7: No Automatic Transitions")]
-        public Property NoAutomaticTransitions()
+        public void NoAutomaticTransitions()
         {
-            return Prop.ForAll(
+            Prop.ForAll(
                 Gen.Choose(1, 200).ToArbitrary(),
                 updateCount =>
                 {
@@ -184,7 +173,7 @@ namespace FsmSystem.Tests
                     }
 
                     return machine.CurrentState == state;
-                });
+                }).QuickCheckThrowOnFailure();
         }
     }
 }

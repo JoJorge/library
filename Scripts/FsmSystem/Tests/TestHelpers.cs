@@ -3,6 +3,7 @@ namespace FsmSystem.Tests
     using System;
     using System.Collections.Generic;
     using FsCheck;
+    using FsCheck.Fluent;
 
     /// <summary>
     /// 測試用的具體 Machine 子類別，供所有測試檔案共用。
@@ -572,7 +573,7 @@ namespace FsmSystem.Tests
                 MachineOp.Transition);
 
             var gen = Gen.Choose(minLength, maxLength)
-                .SelectMany(length => Gen.ArrayOf(length, opGen));
+                .SelectMany(length => Gen.ArrayOf(opGen, length));
 
             return gen.ToArbitrary();
         }

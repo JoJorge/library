@@ -2,10 +2,6 @@ StyleCop.Analyzers(JoJorge ver.) 提供針對 C# 程式碼風格與一致性的�
 
 ### Rule areas
 
-**[Special Rules (SA0000-)](SpecialRules.md)**
-
-Rules which provide special functionality like workarounds, configuration errors, etc.
-
 **[Spacing Rules (SA1000-)](SpacingRules.md)**
 
 Rules which enforce spacing requirements around keywords and symbols in the code.

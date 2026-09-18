@@ -1,0 +1,280 @@
+classDiagram
+    %% =========================================================
+    %% Namespace
+    %% =========================================================
+    namespace SingletonPattern {
+        class Singleton~T~
+    }
+    namespace InputSystem {
+        class InputSystemManager
+        class BindingManager
+        class ConflictChecker
+        class BindingConflict
+        class InputActionEnumAttribute
+        class InputContext
+        class InputDeviceType
+    }
+    namespace DevSystem {
+        class DevSystemState
+        class LogCategory
+        class DevAction
+        class PanelNodeKind
+        class IDevPanelTab
+        class ILogSink
+        class ILogToggleConfigLoader
+        class DevLogToggleConfig
+        class DevLogToggleConfigLoader
+        class DevSystemManager
+        class DevLogger
+        class DevKeyBinder
+        class DevKeyRegistration
+        class DevKeyBindResult
+        class DevKeyBindFailure
+        class DevPanel
+        class PanelDefinition
+        class PanelNodeDefinition
+        class PanelNode
+        class DevKeyListTab
+        class DebugLogSettingsTab
+        class DevActionEnumResolver
+    }
+
+    %% =========================================================
+    %% Enum 定義
+    %% =========================================================
+    class DevSystemState {
+        <<enum>>
+        Uninitialized
+        Ready
+    }
+
+    class LogCategory {
+        <<enum>>
+        General
+        Network
+        Gameplay
+        UI
+    }
+
+    class DevAction {
+        <<enum>>
+        DevTogglePanel
+        DevReloadScene
+        DevToggleGodMode
+    }
+
+    class PanelNodeKind {
+        <<enum>>
+        SubTabContainer
+        Leaf
+    }
+
+    class DevKeyBindFailure {
+        <<enum>>
+        None
+        InvalidRequest
+        InvalidPath
+        Duplicate
+        Conflict
+        NotReady
+    }
+
+    %% =========================================================
+    %% Interface 定義
+    %% =========================================================
+    class IDevPanelTab {
+        <<interface>>
+        + Title: string*
+        + BuildContent() VisualElement*
+        + OnShown() void*
+        + OnUpdate() void*
+    }
+
+    class ILogSink {
+        <<interface>>
+        + Write(string formatted) bool*
+    }
+
+    class ILogToggleConfigLoader {
+        <<interface>>
+        + Load() IReadOnlyDictionary~LogCategory, bool~*
+    }
+
+    %% =========================================================
+    %% Class 定義
+    %% =========================================================
+    class Singleton~T~ {
+        <<abstract>>
+        - _instance: volatile T$
+        - _lock: readonly object$
+        # Singleton()
+        + Instance: T$
+    }
+
+    class DevSystemManager {
+        - _state: DevSystemState
+        - _logger: DevLogger
+        - _keyBinder: DevKeyBinder
+        - _panel: DevPanel
+        # DevSystemManager()
+        + State: DevSystemState
+        + Logger: DevLogger
+        + KeyBinder: DevKeyBinder
+        + Panel: DevPanel
+        + Init(PanelDefinition definition) bool
+        + Release() bool
+        - IsReady() bool
+    }
+
+    class DevLogger {
+        - _toggles: Dictionary~LogCategory, bool~
+        - _configLoaded: bool
+        - _sink: ILogSink
+        + MaxMessageLength: int$
+        + Log(LogCategory category, string message) void
+        + SetCategoryEnabled(LogCategory category, bool enabled) bool
+        + IsCategoryEnabled(LogCategory category) bool
+        + GetCategories() IReadOnlyList~LogCategory~
+        + LoadToggleConfig(ILogToggleConfigLoader loader) void
+        - Format(LogCategory category, string message) string
+    }
+
+    class DevKeyBinder {
+        - _registrations: Dictionary~DevAction, DevKeyRegistration~
+        - _bindingManager: BindingManager
+        - _conflictChecker: ConflictChecker
+        + RegisterDevKey(DevAction action, string bindingPath, string description) DevKeyBindResult
+        + Unbind(DevAction action) bool
+        + GetRegistrations() IReadOnlyList~DevKeyRegistration~
+        + ClearAll() bool
+    }
+
+    class DevKeyRegistration {
+        + Action: DevAction
+        + BindingPath: string
+        + Description: string
+        + Context: InputContext
+        + DeviceType: InputDeviceType
+    }
+
+    class DevKeyBindResult {
+        + Success: bool
+        + FailureReason: DevKeyBindFailure
+        + Conflicts: IReadOnlyList~BindingConflict~
+    }
+
+    class DevPanel {
+        - _root: PanelNode
+        + MaxDepth: int$
+        + MaxTabCount: int$
+        + Build(PanelDefinition definition) bool
+        + Release() bool
+        + GetTabs() IReadOnlyList~PanelNode~
+    }
+
+    class PanelDefinition {
+        + Nodes: IReadOnlyList~PanelNodeDefinition~
+    }
+
+    class PanelNodeDefinition {
+        + Title: string
+        + Tab: IDevPanelTab
+        + Children: IReadOnlyList~PanelNodeDefinition~
+    }
+
+    class PanelNode {
+        - _children: List~PanelNode~
+        + Depth: int
+        + Kind: PanelNodeKind
+        + Title: string
+        + Tab: IDevPanelTab
+        + Children: IReadOnlyList~PanelNode~
+    }
+
+    class DevKeyListTab {
+        - _keyBinder: DevKeyBinder
+        + Title: string
+        + BuildContent() VisualElement
+        + OnShown() void
+        + OnUpdate() void
+    }
+
+    class DebugLogSettingsTab {
+        - _logger: DevLogger
+        - _rows: Dictionary~LogCategory, Toggle~
+        + Title: string
+        + BuildContent() VisualElement
+        + OnShown() void
+        + OnUpdate() void
+        - OnToggleChanged(LogCategory category, bool target) void
+    }
+
+    class DevActionEnumResolver {
+        <<static>>
+        + HasDevPrefix(DevAction action) bool$
+        + GetContext(DevAction action) InputContext$
+        + GetDeviceType(DevAction action) InputDeviceType$
+    }
+
+    class DevLogToggleConfig {
+        <<ScriptableObject>>
+        + EnabledCategories: List~LogCategory~
+    }
+
+    class DevLogToggleConfigLoader {
+        - _config: DevLogToggleConfig
+        + Load() IReadOnlyDictionary~LogCategory, bool~
+    }
+
+    %% =========================================================
+    %% Relations
+    %% =========================================================
+    Singleton~T~ <|-- DevSystemManager
+
+    DevSystemManager *-- DevLogger
+    DevSystemManager *-- DevKeyBinder
+    DevSystemManager *-- DevPanel
+    DevSystemManager ..> DevSystemState
+    DevSystemManager ..> PanelDefinition
+
+    DevLogger *-- ILogSink
+    DevLogger ..> ILogToggleConfigLoader : loads
+    DevLogger ..> LogCategory
+
+    ILogToggleConfigLoader <|.. DevLogToggleConfigLoader
+    DevLogToggleConfigLoader ..> DevLogToggleConfig : reads
+    DevLogToggleConfig ..> LogCategory : enables
+
+    DevKeyBinder --> BindingManager
+    DevKeyBinder --> ConflictChecker
+    DevKeyBinder ..> DevKeyRegistration : records
+    DevKeyBinder ..> DevActionEnumResolver : resolves
+    DevKeyBinder ..> DevKeyBindResult : returns
+    DevKeyBindResult ..> DevKeyBindFailure
+    DevKeyBindResult --> "0...*" BindingConflict
+    DevKeyRegistration ..> DevAction
+    DevAction ..> InputActionEnumAttribute
+
+    DevPanel *-- "1" PanelNode : root
+    PanelNode o-- "0...*" PanelNode : children
+    PanelNode o-- IDevPanelTab
+    DevPanel ..> PanelDefinition : builds from
+    PanelDefinition o-- "1...*" PanelNodeDefinition
+    PanelNodeDefinition o-- "0...*" PanelNodeDefinition : children
+    PanelNodeDefinition o-- IDevPanelTab
+    PanelNode ..> PanelNodeKind
+
+    IDevPanelTab <|.. DevKeyListTab
+    IDevPanelTab <|.. DebugLogSettingsTab
+    DevKeyListTab ..> DevKeyBinder : queries
+    DebugLogSettingsTab ..> DevLogger : toggles
+
+    InputSystemManager *-- BindingManager
+    InputSystemManager *-- ConflictChecker
+
+    %% =========================================================
+    %% Style definitions
+    %% =========================================================
+    classDef NewClass fill:#407E40,stroke:#006400,stroke-width:2px
+    classDef ModifiedClass fill:#008B8B,stroke:#004B4B,stroke-width:2px
+    classDef RemovedClass fill:#AF6676,stroke:#DC143C,stroke-width:2px,stroke-dasharray: 5 5

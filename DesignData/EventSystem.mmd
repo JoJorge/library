@@ -1,0 +1,118 @@
+classDiagram
+    %% =========================================================
+    %% Namespace
+    %% =========================================================
+    namespace SingletonPattern {
+        class Singleton~T~
+    }
+    namespace EventSystem {
+        class EventType
+        class PendingOpType
+        class EventArgs
+        class PendingOperation
+        class EventManager
+    }
+
+    %% =========================================================
+    %% Enum 定義
+    %% =========================================================
+    class EventType {
+        <<enum>>
+        None
+        GameStart
+        GameEnd
+        PlayerDeath
+        SceneLoaded
+    }
+
+    class PendingOpType {
+        <<enum>>
+        Add
+        Remove
+        RemoveAll
+    }
+
+    %% =========================================================
+    %% Interface 定義
+    %% =========================================================
+
+    %% =========================================================
+    %% Class 定義
+    %% =========================================================
+    class Singleton~T~ {
+        <<abstract>>
+        - _instance: volatile T$
+        - _lock: readonly object$
+        # Singleton()
+        + Instance: T$
+    }
+
+    class EventArgs {
+        <<struct>>
+        - _int0: int
+        - _int1: int
+        - _long0: long
+        - _long1: long
+        - _float0: float
+        - _float1: float
+        - _bool0: bool
+        - _bool1: bool
+        - _params: object[]
+        + ParamCount: int
+
+        + Create(int v0, int v1 = default) EventArgs$
+        + Create(long v0, long v1 = default) EventArgs$
+        + Create(float v0, float v1 = default) EventArgs$
+        + Create(bool v0, bool v1 = default) EventArgs$
+        + EventArgs(params object[] args)
+        + GetInt(int index) int
+        + GetLong(int index) long
+        + GetFloat(int index) float
+        + GetBool(int index) bool
+        + Get~T~(int index) T
+        + SetInt(int v0, int v1 = default) void
+        + SetLong(long v0, long v1 = default) void
+        + SetFloat(float v0, float v1 = default) void
+        + SetBool(bool v0, bool v1 = default) void
+        + SetParams(params object[] args) void
+    }
+
+    class EventManager {
+        - _listeners: Dictionary~EventType, List&lt;Action&lt;EventType, EventArgs&gt;&gt;~
+        - _dispatchDepth: int
+        - _pendingOps: List~PendingOperation~
+        + IsReady: bool<+;->
+
+        + Init() void
+        + Release() void
+        + Subscribe(EventType type, Action~EventType, EventArgs~ listener) void
+        + Unsubscribe(EventType type, Action~EventType, EventArgs~ listener) void
+        + UnsubscribeAll(EventType type) void
+        + Dispatch(EventType type) void
+        + Dispatch(EventType type, EventArgs args) void
+        - IsValidEventType(EventType type) bool
+        - ApplyPendingChanges() void
+    }
+
+    class PendingOperation {
+        <<struct>>
+        + OpType: PendingOpType
+        + EventType: EventType
+        + Listener: Action~EventType, EventArgs~
+    }
+
+    %% =========================================================
+    %% Relations
+    %% =========================================================
+    Singleton~T~ <|-- EventManager
+    EventManager ..> EventType : identifies events
+    EventManager ..> EventArgs : passes to listeners
+    EventManager *-- PendingOperation
+    PendingOperation --> PendingOpType
+
+    %% =========================================================
+    %% Style definitions
+    %% =========================================================
+    classDef NewClass fill:#407E40,stroke:#006400,stroke-width:2px
+    classDef ModifiedClass fill:#008B8B,stroke:#004B4B,stroke-width:2px
+    classDef RemovedClass fill:#AF6676,stroke:#DC143C,stroke-width:2px,stroke-dasharray: 5 5

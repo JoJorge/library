@@ -11,4 +11,15 @@ vim-autocomplpop: https://github.com/othree/vim-autocomplpop
 4. put all vim-l9 folders into Vundle.vim folder if needed \
 
 # PowerShell
-need to install posh-git first before use PowerShell script
+Need to install posh-git first before use PowerShell script
+
+# Unity
+Some common utils along with Kiro requirement and desgin documents
+
+Put Scripts into Assets/Scripts/
+
+# Kiro
+Kiro IDE steerings for Unity development with Spec workflow
+
+# Credits
+- [Ponytail](https://github.com/DietrichGebert/ponytail?tab=MIT-1-ov-file)

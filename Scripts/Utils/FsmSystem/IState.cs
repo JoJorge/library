@@ -1,4 +1,4 @@
-namespace FsmSystem
+namespace Utils.FsmSystem
 {
     /// <summary>
     /// Defines the lifecycle contract for a state bound to a specific Machine type.

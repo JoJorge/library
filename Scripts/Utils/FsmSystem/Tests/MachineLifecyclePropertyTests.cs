@@ -1,4 +1,4 @@
-namespace FsmSystem.Tests
+namespace Utils.FsmSystem.Tests
 {
     using FsCheck;
     using FsCheck.Fluent;

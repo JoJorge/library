@@ -1,0 +1,30 @@
+{
+    "name": "DevSystem.Unity.Tests",
+    "rootNamespace": "DevSystem.Unity.Tests",
+    "references": [
+        "DevSystem",
+        "DevSystem.Unity",
+        "InputSystem",
+        "Utils",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "FsCheck.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

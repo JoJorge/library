@@ -1,4 +1,4 @@
-namespace FsmSystem
+namespace Utils.FsmSystem
 {
     /// <summary>
     /// Non-generic base class for Machine instances, enabling heterogeneous storage in FsmManager.

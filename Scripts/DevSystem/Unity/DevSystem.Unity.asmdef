@@ -1,0 +1,19 @@
+{
+    "name": "DevSystem.Unity",
+    "rootNamespace": "DevSystem.Unity",
+    "references": [
+        "DevSystem",
+        "InputSystem",
+        "Utils",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

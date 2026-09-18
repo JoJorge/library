@@ -1,4 +1,4 @@
-namespace FsmSystem
+namespace Utils.FsmSystem
 {
     using System;
     using System.Collections.Generic;

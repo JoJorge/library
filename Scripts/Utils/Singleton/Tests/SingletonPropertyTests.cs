@@ -1,4 +1,4 @@
-namespace SingletonPattern.Tests
+namespace Utils.Singleton.Tests
 {
     using FsCheck;
     using FsCheck.Fluent;

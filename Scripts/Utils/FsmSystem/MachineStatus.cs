@@ -1,4 +1,4 @@
-namespace FsmSystem
+namespace Utils.FsmSystem
 {
     /// <summary>
     /// Represents the lifecycle status of a Machine instance.

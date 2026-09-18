@@ -1,4 +1,4 @@
-namespace SingletonPattern
+namespace Utils.Singleton
 {
     using System;
 

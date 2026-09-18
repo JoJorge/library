@@ -1,4 +1,4 @@
-namespace SingletonPattern.Tests
+namespace Utils.Singleton.Tests
 {
     /// <summary>
     /// 基本測試用單例子類別，用於驗證 <see cref="Singleton{T}"/> 的核心功能。

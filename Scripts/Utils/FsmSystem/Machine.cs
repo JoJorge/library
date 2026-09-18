@@ -1,4 +1,8 @@
-namespace FsmSystem
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Utils.Tests")]
+[assembly: InternalsVisibleTo("TestProj")]
+namespace Utils.FsmSystem
 {
     using System;
 
@@ -39,7 +43,7 @@ namespace FsmSystem
         /// <exception cref="ArgumentNullException">
         /// Thrown when <paramref name="initialState"/> is <c>null</c>.
         /// </exception>
-        internal Machine(IState<TOwner> initialState)
+        protected Machine(IState<TOwner> initialState)
         {
             _initialState = initialState ?? throw new ArgumentNullException(nameof(initialState));
             Status = MachineStatus.Created;

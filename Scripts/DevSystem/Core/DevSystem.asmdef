@@ -1,0 +1,17 @@
+{
+    "name": "DevSystem",
+    "rootNamespace": "DevSystem",
+    "references": [
+        "InputSystem",
+        "Utils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

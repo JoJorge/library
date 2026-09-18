@@ -71,7 +71,7 @@
 | 情境處理器設計 | 抽象類別 vs 介面 | **`IContextHandler` 介面** | 最大化靈活性，不限制繼承結構；符合需求 5.7 |
 | 衝突判定範圍 | 全域衝突 vs 同 Context 同裝置 | **同 `InputContext` 且同 `InputDeviceType`** | 符合需求 3.4，跨情境綁定不視為衝突 |
 | 衝突判定標準 | 模糊比對 vs 字串相等 | **字串完全相等（Binding Path 字串相等）** | 符合需求 3.4 明確規定 |
-| Context 上限 | 無限制 vs 固定上限 | **1 至 32 個** | 符合需求 5.1，防止無限制註冊造成資源浪費 |
+| Context 上限 | 無限制 vs 固定上限 | **1 至 8 個** | 符合需求 5.1，防止無限制註冊造成資源浪費 |
 | Action 識別方式 | `string` vs `Enum` | **`Enum` + `[InputActionEnum]` Attribute 驗證** | 編譯期避免 typo，Attribute 確保型別合法性，`ActionEnumResolver` 負責轉換為 Unity action name 字串，同時保留擴充彈性 |
 
 [↩](#目錄)
@@ -533,7 +533,7 @@ sequenceDiagram
 
 | 資料結構 | 型別 | 用途 |
 |----------|------|------|
-| `_contextHandlers` | `Dictionary<InputContext, IContextHandler>` | 儲存已註冊的情境處理器（上限 32 個） |
+| `_contextHandlers` | `Dictionary<InputContext, IContextHandler>` | 儲存已註冊的情境處理器（上限 8 個） |
 | `_profiles` | `Dictionary<InputDeviceType, BindingProfile>` | 儲存每種裝置類型的綁定設定檔 |
 | `_activeContext` | `InputContext?` | 目前啟用的情境（null 表示無啟用） |
 | `_systemState` | `SystemState` | 系統生命週期狀態 |
@@ -695,7 +695,7 @@ public class BindingConflict
 | 衝突檢查的 Action 未註冊 | `action` 所屬列舉型別的 `[InputActionEnum]` Context 未註冊於任何 Context Handler | 回傳錯誤指示（特殊的錯誤結果物件或空集合搭配標記） | 3.6 |
 | 切換至未註冊的 Context | `SwitchContext` 的目標 Context 無對應處理器 | 維持當前 Context 不變，回傳 `false` | 5.8 |
 | 重複註冊同一 Context | 已有 handler 對應該 Context | 拒絕註冊，回傳 `false` | 5.9 |
-| Context 註冊數量超過上限 | 已達 32 個 handler | 拒絕註冊，回傳 `false` | 5.1 |
+| Context 註冊數量超過上限 | 已記錄的handler到達上限 | 拒絕註冊，回傳 `false` | 5.1 |
 
 ### 錯誤回傳設計
 
@@ -766,7 +766,7 @@ if (this._systemState != SystemState.Ready)
 | 未定義列舉值回傳空集合 | 傳入 `(InputDeviceType)99`，驗證不拋例外 | 4.5 |
 | 切換未註冊 Context 失敗 | 目標未註冊，回傳 `false` 且當前不變 | 5.8 |
 | 重複註冊同 Context 失敗 | 已有 handler，回傳 `false` | 5.9 |
-| 超過 32 個 handler 拒絕註冊 | 達上限後再註冊，回傳 `false` | 5.1 |
+| 超過 handler 上限拒絕註冊 | 達上限後再註冊，回傳 `false` | 5.1 |
 | 初始化完成後所有 handler 皆停用 | 初始化後遍歷所有 handler 驗證 `IsActive == false` | 5.10 |
 | Asset 載入失敗進入 Disabled | Mock 資產載入失敗，驗證 `SystemState == Disabled` | 6.5 |
 | Disabled 狀態拒絕操作 | 在 Disabled 狀態呼叫操作，驗證回傳失敗 | 6.6 |

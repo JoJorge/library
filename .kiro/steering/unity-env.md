@@ -11,6 +11,9 @@ inclusion: manual
 ####### comment結尾 #######
 - Unity Version: Unity 6000.5.71f1
 - Input: New Input System
-- UI: UGUI
-- Test: NUnit with FsCheck,(do not use FsCheck.NUnit, just call FsCheck Check API in NUnit test if PBT is required)
-- Other Packages: UniTask, Addresable, DOTween
+- UI: UI toolkit
+- Test: NUnit with FsCheck 3.X, tested by Unity Test Runner
+    - Do not use FsCheck.NUnit, just call FsCheck API in NUnit test if PBT is required
+    - namespace for FsCheck 3.X in C#: FsCheck.Fluent
+    - The test classes will be in different assembly from functionality class, to utilize Unity Test Runner
+- Other Packages: UniTask, Addresable, DOTween, Odin Inspector

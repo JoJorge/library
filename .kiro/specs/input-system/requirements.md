@@ -85,7 +85,7 @@
 
 #### Acceptance Criteria
 
-1. THE Input_System_Manager SHALL 支援註冊 1 至 32 個 Context_Handler，每個 Context_Handler 對應一個獨立的 Input_Context
+1. THE Input_System_Manager SHALL 支援註冊 1 至 8 個 Context_Handler，每個 Context_Handler 對應一個獨立的 Input_Context
 2. WHEN 遊戲切換至特定 Input_Context 時，THE Input_System_Manager SHALL 先停用當前啟用的 Context_Handler，再啟用目標 Input_Context 對應的 Context_Handler，確保同一時間僅有一個 Context_Handler 處於啟用狀態
 3. THE Context_Handler SHALL 透過 C# 事件（event）發布該情境下的輸入事件，供任何外部系統透過標準事件訂閱機制進行訂閱
 4. WHEN Context_Handler 被停用時，THE Context_Handler SHALL 立即停止發布所有輸入事件，已停用後收到的輸入動作不得觸發事件發布

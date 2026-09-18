@@ -1,0 +1,368 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Set up DevSystem assemblies, folders and DEV_MODE gating skeleton": [
+      {
+        "executionId": "1cf0128b-e2e9-4561-8d4f-af03248eb8e5",
+        "chatSessionId": "sess_83493ff5-a55a-464d-a14f-1ee9cebce9b9",
+        "timestamp": 1789613259614
+      },
+      {
+        "executionId": "1cf0128b-e2e9-4561-8d4f-af03248eb8e5",
+        "chatSessionId": "sess_83493ff5-a55a-464d-a14f-1ee9cebce9b9",
+        "timestamp": 1789613370543
+      }
+    ],
+    "2.1 定義日誌抽象介面與資料": [
+      {
+        "executionId": "f5133712-eddf-4041-9dce-97bbf7b32358",
+        "chatSessionId": "sess_544b7d64-e686-4c87-bec5-b92b722b6d6d",
+        "timestamp": 1789613497524
+      },
+      {
+        "executionId": "f5133712-eddf-4041-9dce-97bbf7b32358",
+        "chatSessionId": "sess_544b7d64-e686-4c87-bec5-b92b722b6d6d",
+        "timestamp": 1789613710412
+      }
+    ],
+    "2.2 實作 DevLogger 格式化與閘控邏輯": [
+      {
+        "executionId": "f5133712-eddf-4041-9dce-97bbf7b32358",
+        "chatSessionId": "sess_544b7d64-e686-4c87-bec5-b92b722b6d6d",
+        "timestamp": 1789613498742
+      },
+      {
+        "executionId": "f5133712-eddf-4041-9dce-97bbf7b32358",
+        "chatSessionId": "sess_544b7d64-e686-4c87-bec5-b92b722b6d6d",
+        "timestamp": 1789613711645
+      }
+    ],
+    "2. Implement DevLogger core (pure logic)": [
+      {
+        "executionId": "f5133712-eddf-4041-9dce-97bbf7b32358",
+        "chatSessionId": "sess_544b7d64-e686-4c87-bec5-b92b722b6d6d",
+        "timestamp": 1789613711862
+      }
+    ],
+    "3.1 建立按鍵註冊資料模型": [
+      {
+        "executionId": "85177101-f5c3-4230-9065-263f8eadac32",
+        "chatSessionId": "sess_b2319410-83ba-46b5-9a82-ffd3e148c5f5",
+        "timestamp": 1789613912645
+      },
+      {
+        "executionId": "85177101-f5c3-4230-9065-263f8eadac32",
+        "chatSessionId": "sess_b2319410-83ba-46b5-9a82-ffd3e148c5f5",
+        "timestamp": 1789614007367
+      }
+    ],
+    "3.2 實作 DevKeyBinder 綁定與衝突閘控": [
+      {
+        "executionId": "85177101-f5c3-4230-9065-263f8eadac32",
+        "chatSessionId": "sess_b2319410-83ba-46b5-9a82-ffd3e148c5f5",
+        "timestamp": 1789614008390
+      },
+      {
+        "executionId": "85177101-f5c3-4230-9065-263f8eadac32",
+        "chatSessionId": "sess_b2319410-83ba-46b5-9a82-ffd3e148c5f5",
+        "timestamp": 1789614173685
+      }
+    ],
+    "3. Implement DevKeyBinder core (pure logic)": [
+      {
+        "executionId": "85177101-f5c3-4230-9065-263f8eadac32",
+        "chatSessionId": "sess_b2319410-83ba-46b5-9a82-ffd3e148c5f5",
+        "timestamp": 1789614173888
+      }
+    ],
+    "4.1 建立面板宣告式定義與節點樹模型": [
+      {
+        "executionId": "392ff8a0-295b-4f2c-8e84-f43e4f7f2a2c",
+        "chatSessionId": "sess_dd435954-e7f2-443c-ab2f-2f2d74773c44",
+        "timestamp": 1789614564615
+      },
+      {
+        "executionId": "392ff8a0-295b-4f2c-8e84-f43e4f7f2a2c",
+        "chatSessionId": "sess_dd435954-e7f2-443c-ab2f-2f2d74773c44",
+        "timestamp": 1789614709658
+      }
+    ],
+    "4. Implement Panel data models and tree builder (pure logic)": [
+      {
+        "executionId": "392ff8a0-295b-4f2c-8e84-f43e4f7f2a2c",
+        "chatSessionId": "sess_dd435954-e7f2-443c-ab2f-2f2d74773c44",
+        "timestamp": 1789614709902
+      }
+    ],
+    "5.1 撰寫 DevLogger 屬性測試與範例測試": [
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789614834414
+      },
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789615364327
+      }
+    ],
+    "5.2 撰寫 DevKeyBinder 屬性測試與範例測試": [
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789614835709
+      },
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789615365040
+      }
+    ],
+    "5.3 撰寫 Panel 樹模型屬性測試與範例測試": [
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789614836394
+      },
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789615366158
+      }
+    ],
+    "5.4 執行純邏輯層所有測試並使其通過": [
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789615371319
+      },
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789616488344
+      }
+    ],
+    "5. Checkpoint - 純邏輯層測試": [
+      {
+        "executionId": "d8f75c82-a701-4dbe-9e3d-dfb2ade64ef3",
+        "chatSessionId": "sess_f89b1752-9696-48dc-a4ed-0e8ee39db691",
+        "timestamp": 1789616488610
+      }
+    ],
+    "6.1 定義 IDevPanelTab 介面（Unity assembly）": [
+      {
+        "executionId": "ac4d5607-61be-43cf-9ddf-fb2b59f45f5f",
+        "chatSessionId": "sess_19ac36f2-6468-4a4b-8d56-100f32434c62",
+        "timestamp": 1789626179965
+      },
+      {
+        "executionId": "ac4d5607-61be-43cf-9ddf-fb2b59f45f5f",
+        "chatSessionId": "sess_19ac36f2-6468-4a4b-8d56-100f32434c62",
+        "timestamp": 1789626253353
+      }
+    ],
+    "6.2 實作 DevPanel（UI Toolkit）": [
+      {
+        "executionId": "ac4d5607-61be-43cf-9ddf-fb2b59f45f5f",
+        "chatSessionId": "sess_19ac36f2-6468-4a4b-8d56-100f32434c62",
+        "timestamp": 1789626258730
+      },
+      {
+        "executionId": "ac4d5607-61be-43cf-9ddf-fb2b59f45f5f",
+        "chatSessionId": "sess_19ac36f2-6468-4a4b-8d56-100f32434c62",
+        "timestamp": 1789626611948
+      }
+    ],
+    "6. Implement Unity-dependent panel UI (UI Toolkit)": [
+      {
+        "executionId": "ac4d5607-61be-43cf-9ddf-fb2b59f45f5f",
+        "chatSessionId": "sess_19ac36f2-6468-4a4b-8d56-100f32434c62",
+        "timestamp": 1789626612202
+      }
+    ],
+    "7.1 實作日誌設定 ScriptableObject、Loader 與預設 Sink": [
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789626786293
+      },
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789626885408
+      }
+    ],
+    "7.2 實作 DevKeyListTab": [
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789626890588
+      },
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789627007537
+      }
+    ],
+    "7.3 實作 DebugLogSettingsTab": [
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789626891241
+      },
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789627008605
+      }
+    ],
+    "7. Implement config, sink, and built-in tabs (Unity assembly)": [
+      {
+        "executionId": "a1866690-bcff-436f-9800-e731bc796e59",
+        "chatSessionId": "sess_78a75202-7f7c-4f5b-b669-c5cce3ecdb3b",
+        "timestamp": 1789627008914
+      }
+    ],
+    "8.1 實作 DevSystemManager 生命週期": [
+      {
+        "executionId": "9549152c-91c4-4978-babe-fda1e07b9caf",
+        "chatSessionId": "sess_3a447dee-fed1-4018-a63e-15a4e2615798",
+        "timestamp": 1789627074390
+      },
+      {
+        "executionId": "9549152c-91c4-4978-babe-fda1e07b9caf",
+        "chatSessionId": "sess_3a447dee-fed1-4018-a63e-15a4e2615798",
+        "timestamp": 1789627278966
+      }
+    ],
+    "8.2 建立測試 assembly 並驗證 DEV_MODE 未定義組態可編譯": [
+      {
+        "executionId": "9549152c-91c4-4978-babe-fda1e07b9caf",
+        "chatSessionId": "sess_3a447dee-fed1-4018-a63e-15a4e2615798",
+        "timestamp": 1789627284190
+      },
+      {
+        "executionId": "9549152c-91c4-4978-babe-fda1e07b9caf",
+        "chatSessionId": "sess_3a447dee-fed1-4018-a63e-15a4e2615798",
+        "timestamp": 1789627469106
+      }
+    ],
+    "8. Integrate DevSystemManager and wire subsystems": [
+      {
+        "executionId": "9549152c-91c4-4978-babe-fda1e07b9caf",
+        "chatSessionId": "sess_3a447dee-fed1-4018-a63e-15a4e2615798",
+        "timestamp": 1789627469463
+      }
+    ],
+    "9.1 撰寫內建分頁屬性測試與範例測試": [
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789627948454
+      },
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789628238283
+      }
+    ],
+    "9.2 撰寫生命週期屬性測試與範例測試": [
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789627949899
+      },
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789628239224
+      }
+    ],
+    "9.3 撰寫 DEV_MODE 空實作等價性屬性測試": [
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789627951317
+      },
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789628240623
+      }
+    ],
+    "9.4 撰寫整合測試": [
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789627951845
+      },
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789628241549
+      }
+    ],
+    "9.5 執行 Unity 層與整合所有測試並使其通過": [
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789628249032
+      },
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789630383920
+      }
+    ],
+    "9. Checkpoint - Unity 層與整合測試": [
+      {
+        "executionId": "0b2c7e6c-1097-4e38-8a67-908becfd26d5",
+        "chatSessionId": "sess_6eb52c3e-5d5e-460d-bef5-6112fda76a2c",
+        "timestamp": 1789630384208
+      }
+    ],
+    "10.1 執行全部測試並確認通過": [
+      {
+        "executionId": "e75e5114-17ad-4b0c-88fc-415302d71bc9",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789634515788
+      },
+      {
+        "executionId": "e75e5114-17ad-4b0c-88fc-415302d71bc9",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789634520871
+      }
+    ],
+    "10.2 產生需求測試覆蓋率文件": [
+      {
+        "executionId": "bb9a06a8-2681-4c88-b70f-9ea4a3033355",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789634635599
+      },
+      {
+        "executionId": "bb9a06a8-2681-4c88-b70f-9ea4a3033355",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789634820709
+      }
+    ],
+    "10.3 執行 mutation testing（Stryker）": [
+      {
+        "executionId": "bb9a06a8-2681-4c88-b70f-9ea4a3033355",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789634825213
+      },
+      {
+        "executionId": "bb9a06a8-2681-4c88-b70f-9ea4a3033355",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789635177175
+      }
+    ],
+    "10. Final checkpoint - 全測試、覆蓋率文件與 mutation testing": [
+      {
+        "executionId": "bb9a06a8-2681-4c88-b70f-9ea4a3033355",
+        "chatSessionId": "sess_f47a9769-716c-487d-ba31-eac0834c9c38",
+        "timestamp": 1789635177531
+      }
+    ]
+  }
+}

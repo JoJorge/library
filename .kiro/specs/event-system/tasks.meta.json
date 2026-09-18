@@ -1,0 +1,204 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 建立 EventType enum": [
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902500753
+      },
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902589800
+      }
+    ],
+    "1.2 實作 EventArgs struct 的欄位與建構子": [
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902501802
+      },
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902590740
+      }
+    ],
+    "1.3 實作 EventArgs 的建構工廠與 Setter 方法": [
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902596310
+      },
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902679527
+      }
+    ],
+    "1.4 實作 EventArgs 的型別安全存取器": [
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787902685362
+      },
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787903017194
+      }
+    ],
+    "1. 建立 EventType 列舉與 EventArgs 值型別結構": [
+      {
+        "executionId": "24c722f2-2d18-4239-85a5-56bde86ae911",
+        "chatSessionId": "sess_a485c109-27e1-4679-aa1e-fbb203d9a58a",
+        "timestamp": 1787903017274
+      }
+    ],
+    "2. Checkpoint - EventArgs 測試": [
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903230006
+      },
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903864099
+      }
+    ],
+    "2.1 撰寫 EventArgs 的 FsCheck 產生器與 property 測試": [
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903231443
+      },
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903396316
+      }
+    ],
+    "2.2 撰寫 EventArgs 的 unit 測試": [
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903232369
+      },
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903398355
+      }
+    ],
+    "2.3 執行 EventArgs 測試並確認通過": [
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903404878
+      },
+      {
+        "executionId": "37331ef6-a6cf-41dd-969e-b32c05f884ed",
+        "chatSessionId": "sess_242cf5a4-f5bd-4167-a574-999ef36d1f0c",
+        "timestamp": 1787903864033
+      }
+    ],
+    "3. 實作 EventManager 生命週期與內部狀態": [
+      {
+        "executionId": "24e53965-bcd0-4146-aecc-808e963019b7",
+        "chatSessionId": "sess_b146d933-368c-4158-9214-5f2a2224bd12",
+        "timestamp": 1787904038468
+      },
+      {
+        "executionId": "24e53965-bcd0-4146-aecc-808e963019b7",
+        "chatSessionId": "sess_b146d933-368c-4158-9214-5f2a2224bd12",
+        "timestamp": 1787904148868
+      }
+    ],
+    "4. 實作訂閱與退訂": [
+      {
+        "executionId": "5ac6dac6-2291-483c-ab36-198c2b9a2eb9",
+        "chatSessionId": "sess_fdb3df18-bbf3-4e2b-bff9-f4de3988023b",
+        "timestamp": 1787904198843
+      },
+      {
+        "executionId": "5ac6dac6-2291-483c-ab36-198c2b9a2eb9",
+        "chatSessionId": "sess_fdb3df18-bbf3-4e2b-bff9-f4de3988023b",
+        "timestamp": 1787904302812
+      }
+    ],
+    "5. 實作事件派發並串接整體流程": [
+      {
+        "executionId": "a7f19d06-204c-40cd-9af0-68d7caed2cdf",
+        "chatSessionId": "sess_ad051283-bbdf-44f2-a079-cfded2b61127",
+        "timestamp": 1787904494092
+      },
+      {
+        "executionId": "a7f19d06-204c-40cd-9af0-68d7caed2cdf",
+        "chatSessionId": "sess_ad051283-bbdf-44f2-a079-cfded2b61127",
+        "timestamp": 1787904571011
+      }
+    ],
+    "6. Checkpoint - EventManager 測試": [
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904685884
+      },
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787905718181
+      }
+    ],
+    "6.1 撰寫 EventManager 訂閱與派發的 property 測試": [
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904687293
+      },
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904897306
+      }
+    ],
+    "6.2 撰寫 EventManager 派發中變更與防護的 property 測試": [
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904688619
+      },
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904898672
+      }
+    ],
+    "6.3 撰寫 EventManager 的 unit 測試": [
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904689439
+      },
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904899637
+      }
+    ],
+    "6.4 執行 EventManager 測試並確認通過": [
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787904905266
+      },
+      {
+        "executionId": "83845568-2c08-4ad1-bc89-20f088b7e61d",
+        "chatSessionId": "sess_8f848e49-7b32-475b-a4d6-a5a57f92ca1b",
+        "timestamp": 1787905718101
+      }
+    ]
+  }
+}
